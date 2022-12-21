@@ -1,0 +1,19 @@
+.body{
+    display: flex;
+    flex-direction: column;    
+    align-items: center;    
+}
+
+.table{
+    display: flex;
+    flex-flow: row wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.tbody{
+    padding: 8px;
+}
+.thead{
+    padding: 8px;
+}
