@@ -1,0 +1,13 @@
+.Input{
+    display: flex;
+    justify-content: center;
+    font-family: "Helvetica", Arial, sans-serif;
+    text-decoration: none;
+    font-size:medium;
+    color: #000;
+    border-style: double;
+  }
+
+.inputError {
+  color: #8E1600;
+}
