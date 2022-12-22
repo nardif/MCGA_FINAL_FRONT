@@ -1,13 +1,20 @@
 # Final MCGA
 
-Crear una aplicacion con React, Redux y la libreria:
-- react-dom
-- react-hook-from
-- react-redux
-- react-router-dom
-- react-scripts
-- redux-thunk
-- web-vitals
+## Funcionalidades:
+- Ruta pública en el Frontend que visualice datos traídos desde el backend.
+- Ruta pública de login en el Frontend que permita ingresar usuario y contraseña para iniciar
+sesión (con sus respectivas validaciones).
+- Ruta privada en el Frontend (solo se puede acceder si se inicia sesión) con un CRUD* de datos
+guardados en la base de datos (con sus respectivas validaciones).
+- El CRUD* debe afectar de forma directa los datos que se muestran en la pantalla pública.
+- Los endpoints utilizados para el CRUD deben ser privados, es decir, solo se pueden realizar si
+el usuario está autenticado a través de un token válido.
+- Funcionalidad de Logout en el Frontend y redirección al Home.
+
+## Tecnologías:
+- Tecnologías frontend: Flexbox, React, React Router, Redux y React Hook Form.
+- Tecnologías backend: Node.js, Express, MongoDB, Mongoose y JWToken.
+- Cloud Server: Vercel.
 
 ## Instalacion
 
@@ -16,15 +23,9 @@ Usar el comando [npm](https://www.npmjs.com/) sobre la carpeta myapp .
 ```bash
 npm install
 ```
-## Que se nececita?
-
-Es neceraio tener el back en del parcial anterios [backend](https://github.com/fabricimarelli/Parcial1-MCGA) 
 
 ## Colaboradores
 Florencia Nardi y Manuel Losada
 
 ## Como levantar el proyecto
 Una vez hecho en ``` npm install ``` sobre la carpeta myapp hay que ejecutar ```npm start``` para levantar el proyecto
-
-## Que hace la aplicacion
-La aplicaion permite hacer un CRUD de a una base de datos usando react en el front, agregar, modificar, consutar y eliminar productos y que estos que reflejado en una base de datos
