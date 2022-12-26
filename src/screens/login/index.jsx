@@ -28,7 +28,7 @@ const Login = ({ visible, onHide }) => {    //hace un get del dispatcher
       } = useForm({
         defaultValues: {
           email: 'arturo@gmail.com',
-          password: '1234'
+          password: ''
         }
       });
 
