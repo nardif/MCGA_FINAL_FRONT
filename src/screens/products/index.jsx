@@ -1,8 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts, deleteProduct, createProduct, updateProduct } from '../../redux/thunks';
-import { cleanError } from '../../redux/actions';
-import store from '../../redux/store';
 import { useForm } from "react-hook-form";
 import Button from '../../components/Sharedbuttons/buttons';
 import Input from '../../components/SharedImputs/inputs';
@@ -25,9 +23,14 @@ const Products = () => {    //hace un get del dispatcher
         register, //Hook para tomar los inputs del form
         handleSubmit, //ejecuta el onSubmit
         formState: { errors },
+        reset
       } = useForm({
         defaultValues: productToEdit || null,
       });
+
+      useEffect(() => { // reset de hookforms para resetar con los valores del objeto
+        reset(productToEdit)
+      }, [reset,productToEdit])
 
       //AGREAGAR
       const onSubmit = (data) => {
@@ -62,7 +65,7 @@ const Products = () => {    //hace un get del dispatcher
             // el dispatch ejecuta la acción asíncrona de redux para traer la lista de productos
             dispatch(getProducts());
         }
-    }, [products]);
+    }, [products, dispatch]);
 
     if (error) {
         return <p>Error </p>

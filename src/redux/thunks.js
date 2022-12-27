@@ -18,7 +18,8 @@ import {
     getLoginSuccess,
     getLoginError,
     setUser,
-    setToken
+    setToken,
+    logout
   } from './actions';
   
   // define las funciones
@@ -55,6 +56,34 @@ import {
           });
       };
     };
+
+  export const getUserData = () => async(dispatch, getState) => {
+    try {
+      const token = getState().login.token;
+      if (!token) {
+        return;
+      }
+      dispatch(getLoginPending());
+      const response = await fetch(`${process.env.REACT_APP_API}/auth/me`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          token
+        },
+        body: JSON.stringify({
+          token
+        })
+      })
+      if (!response.ok) {
+        throw new Error('No se pudo autorizar :c');
+      }
+      const user = await response.json();
+      dispatch(setUser(user.data));
+    } catch (error) {
+      dispatch(logout());
+      dispatch(getLoginError(error.toString()));
+    }
+  }
 
   export const getProducts = () => {
     return (dispatch, getState) => {
@@ -185,3 +214,4 @@ import {
         });
     };
   };
+  

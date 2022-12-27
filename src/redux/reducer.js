@@ -16,7 +16,7 @@ import {
     DELETE_PRODUCT_ERROR,
     CLEAN_ERROR,
     CLEAN_SELECTED_ITEM
-  } from './actions';
+  } from './types';
   
   const initialState = {
     isFetching: false,

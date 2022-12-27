@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { login } from '../../redux/thunks';
 import { useForm } from "react-hook-form";
-import store from '../../redux/store';
 import Button from '../../components/Sharedbuttons/buttons';
 import Input from '../../components/SharedImputs/inputs';
 import styles from '../products/Products.module.css';
@@ -11,10 +10,6 @@ import Modal from '../../components/Sharedmodals';
 
 const Login = ({ visible, onHide }) => {    //hace un get del dispatcher
     const dispatch = useDispatch();
-    //busca el store
-    const users = useSelector((store) => store.login.list);
-    const error = useSelector((store) => store.login.error);
-    const isLoading = useSelector((store) => store.login.isFetching);
 
     //modal
     const[userToLogin, setUserToLogin] = useState();
@@ -68,7 +63,7 @@ const Login = ({ visible, onHide }) => {    //hace un get del dispatcher
                             errors={errors.email}
                         />
                         <Input
-                            type="text"
+                            type="password"
                             name={"password"}
                             register={register}
                             label="Password:"

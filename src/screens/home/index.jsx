@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProducts } from '../../redux/thunks';
-import { useForm } from "react-hook-form";
 import styles from '../products/Products.module.css';
 
 
