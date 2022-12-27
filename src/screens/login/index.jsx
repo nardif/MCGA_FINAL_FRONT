@@ -22,7 +22,7 @@ const Login = ({ visible, onHide }) => {    //hace un get del dispatcher
         setError
       } = useForm({
         defaultValues: {
-          email: 'arturo@gmail.com',
+          email: 'florencia@gmail.com',
           password: ''
         }
       });
